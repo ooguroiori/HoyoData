@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'starrail-font';
+    src: url('/fonts/starrail.ttf') format('truetype');
+  }
+
+.starrail {
+    font-family: 'starrail-font', sans-serif;
+  }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホヨバの犬ツール</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="genshin.css">
+    <link rel="stylesheet" href="starrail.css">
+</head>
+<body>
+    <header>
+        <img id="button1" src="img/genshin.jpg" alt="Button 1">
+        <img id="button2" src="img/starrail.png" alt="Button 2">
+    </header>
+    <div class="main">
+        <div class="genshin" id="genshinDiv">
+            <h2>突破素材</h2>
+            <div class="rising">
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-boss.png" alt="ボス素材">
+                        <h3>ボス素材</h3>
+                    </div>
+                    <a>x46</a>
+                </div>
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-tokusan.jpg" alt="特産品">
+                        <h3>特産品</h3>
+                    </div>
+                    <a>x168</a>
+                </div>
+            </div>
+            <h2>経験値本</h2>
+            <div class="rising">
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-exp2.jpg" alt="ボス素材">
+                        <h3>大英雄</h3>
+                    </div>
+                    <a>x249</a>
+                </div>
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-exp.jpg" alt="特産品">
+                        <h3>冒険家</h3>
+                    </div>
+                    <a>x996</a>
+                </div>
+            </div>
+            <h2>天賦レベル</h2>
+            <div class="dropdown">
+                <div class="select">
+                  <span>通常攻撃</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu">
+                  <li id="8">8</li>
+                  <li id="9">9</li>
+                  <li id="10">10</li>
+                </ul>
+            </div>
+            <span class="msg"></span>
+            <div class="dropdown">
+                <div class="select">
+                  <span>元素スキル</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu2">
+                    <li id="8">8</li>
+                    <li id="9">9</li>
+                    <li id="10">10</li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <div class="select">
+                  <span>元素爆発</span>
+                  <i class="fa fa-chevron-left"></i>
+                </div>
+                <input type="hidden" name="gender">
+                <ul class="dropdown-menu3">
+                    <li id="8">8</li>
+                    <li id="9">9</li>
+                    <li id="10">10</li>
+                </ul>
+            </div>
+            <h2>モンスター素材</h2>
+            <div class="rising">
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-exp2.jpg" alt="ボス素材">
+                        <h3>大英雄</h3>
+                    </div>
+                    <a>x249</a>
+                </div>
+                <div class="item">
+                    <div class="head">
+                        <img src="/img/G-exp.jpg" alt="特産品">
+                        <h3>冒険家</h3>
+                    </div>
+                    <a>x996</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="starrail hidden" id="starrailDiv">
+            <h2>キャラクター素材</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
