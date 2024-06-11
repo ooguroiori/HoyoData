@@ -57,11 +57,37 @@ $('.dropdown .dropdown-menu3 li').click(function () {
     $(this).parents('.dropdown').find('span').text($(this).text());
     $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
 });
+$(document).ready(function(){
+    $('.dropdown').each(function(){
+        if ($(this).find('span').text() === "通常攻撃") {
+            $(this).find('span').text('8');
+            $(this).find('input[name="gender"]').val('8');
+        }
+    });
+});
+
+$(document).ready(function(){
+    $('.dropdown').each(function(){
+        if ($(this).find('span').text() === "元素スキル") {
+            $(this).find('span').text('8');
+            $(this).find('input[name="gender"]').val('8');
+        }
+    });
+});
+
+$(document).ready(function(){
+    $('.dropdown').each(function(){
+        if ($(this).find('span').text() === "元素爆発") {
+            $(this).find('span').text('8');
+            $(this).find('input[name="gender"]').val('8');
+        }
+    });
+});
 /*End Dropdown Menu*/
 
-var normal = 0;
-var skill = 0;
-var ult = 0;
+var normal = 8;
+var skill = 8;
+var ult = 8;
 
 var point;
 
@@ -69,14 +95,45 @@ $('.dropdown-menu li').click(function () {
 normal = parseInt($(this).parents('.dropdown').find('input').val());
 point = normal + skill + ult;
 console.log(point);
+updatePoint();
 }); 
 $('.dropdown-menu2 li').click(function () {
 skill = parseInt($(this).parents('.dropdown').find('input').val());
 point = normal + skill + ult;
 console.log(point);
+updatePoint();
 }); 
 $('.dropdown-menu3 li').click(function () {
 ult = parseInt($(this).parents('.dropdown').find('input').val());
 point = normal + skill + ult;
 console.log(point);
+updatePoint();
 }); 
+
+function updatePoint() {
+    $('.monster').html(`
+        <div class="rising">
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon1.jpg" alt="ボス素材">
+                    <h3>下位</h3>
+                </div>
+                <a>x` + point +`</a>
+            </div>
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon2.jpg" alt="特産品">
+                    <h3>中位</h3>
+                </div>
+                <a>x996</a>
+            </div>
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon3.jpg" alt="特産品">
+                    <h3>上位</h3>
+                </div>
+                <a>x996</a>
+            </div>
+        </div>
+    `);
+}
