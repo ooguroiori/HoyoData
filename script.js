@@ -88,8 +88,9 @@ $(document).ready(function(){
 var normal = 8;
 var skill = 8;
 var ult = 8;
-
 var point;
+
+
 
 $('.dropdown-menu li').click(function () {
 normal = parseInt($(this).parents('.dropdown').find('input').val());
