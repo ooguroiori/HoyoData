@@ -29,6 +29,7 @@ h2::after {
 
 .rising{
     display: flex;
+    flex-wrap: wrap;
     /* justify-content:space-around; */
 }
 
