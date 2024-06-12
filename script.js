@@ -91,20 +91,20 @@ function updatePoint() {
       }
       return response.json(); // Parse the JSON from the response
     })
-    .then((data) => {
+    .then((gifteddata) => {
       var low =
-        parseInt(data[normal].low) +
-        parseInt(data[skill].low) +
-        parseInt(data[ult].low);
+        parseInt(gifteddata[normal].low) +
+        parseInt(gifteddata[skill].low) +
+        parseInt(gifteddata[ult].low);
       var mid =
-        parseInt(data[normal].mid) +
-        parseInt(data[skill].mid) +
-        parseInt(data[ult].mid);
+        parseInt(gifteddata[normal].mid) +
+        parseInt(gifteddata[skill].mid) +
+        parseInt(gifteddata[ult].mid);
 
       var high =
-        parseInt(data[normal].high) +
-        parseInt(data[skill].high) +
-        parseInt(data[ult].high);
+        parseInt(gifteddata[normal].high) +
+        parseInt(gifteddata[skill].high) +
+        parseInt(gifteddata[ult].high);
       $(".gift").html(
         `
                 <div class="rising">
@@ -141,58 +141,65 @@ function updatePoint() {
     });
   fetch("/json/monster.json")
     .then((response) => {
-      var mlow =
-        parseInt(data[normal].low) +
-        parseInt(data[skill].low) +
-        parseInt(data[ult].low);
-      var mmid =
-        parseInt(data[normal].mid) +
-        parseInt(data[skill].mid) +
-        parseInt(data[ult].mid);
-
-      var mhigh =
-        parseInt(data[normal].high) +
-        parseInt(data[skill].high) +
-        parseInt(data[ult].high);
       // Check if the request was successful
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
       return response.json(); // Parse the JSON from the response
     })
-    .then((data) => {
+    .then((monsterdata) => {
+      var mlow =
+      18 +
+      parseInt(monsterdata[normal].low) +
+      parseInt(monsterdata[skill].low) +
+      parseInt(monsterdata[ult].low);
+    var mmid =
+      30 +
+      parseInt(monsterdata[normal].mid) +
+      parseInt(monsterdata[skill].mid) +
+      parseInt(monsterdata[ult].mid);
+
+    var mhigh =
+      36 +
+      parseInt(monsterdata[normal].high) +
+      parseInt(monsterdata[skill].high) +
+      parseInt(monsterdata[ult].high);
+
+    var crown =
+    parseInt(monsterdata[normal].crown) +
+    parseInt(monsterdata[skill].crown) +
+    parseInt(monsterdata[ult].crown);
       $(".monster").html(
-        `
-                <div class="rising">
-                    <div class="item">
-                        <div class="head">
-                            <img src="/img/G-mon1.jpg" alt="ボス素材">
-                            <h3>下位</h3>
-                        </div>
-                        <a>x` +
-          mlow +
-          `</a>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img src="/img/G-mon2.jpg" alt="特産品">
-                            <h3>中位</h3>
-                        </div>
-                        <a>x` +
-          mmid +
-          `</a>
-                    </div>
-                    <div class="item">
-                        <div class="head">
-                            <img src="/img/G-mon3.jpg" alt="特産品">
-                            <h3>上位</h3>
-                        </div>
-                        <a>x` +
-          mhigh +
-          `</a>
-                    </div>
+        `<div class="rising">
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon1.jpg">
+                    <h3>下位</h3>
                 </div>
-            `
+                <a>x` + mlow + `</a>
+            </div>
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon2.jpg">
+                    <h3>中位</h3>
+                </div>
+                <a>x` + mmid + `</a>
+            </div>
+            <div class="item">
+                <div class="head">
+                    <img src="/img/G-mon3.jpg">
+                    <h3>上位</h3>
+                </div>
+                <a>x` + mhigh + `</a>
+            </div>
+            <div class="item">
+              <div class="head">
+                  <img src="/img/G-crown.png">
+                  <h3>知恵の冠</h3>
+              </div>
+              <a>x` + crown + `</a>
+            </div>
+        </div>`
       );
     });
 }
