@@ -63,10 +63,6 @@ var skill = 0;
 var ult = 0;
 var point;
 
-var gift1 = 3;
-var gift2 = 21;
-var gift3 = 10;
-
 $(".dropdown-menu li").click(function () {
   normal = parseInt($(this).parents(".dropdown").find("input").val());
   point = normal + skill + ult;
@@ -87,82 +83,116 @@ $(".dropdown-menu3 li").click(function () {
 });
 
 function updatePoint() {
-  if (point == 16) {
-    gift1 = 6;
-    gift2 = 42;
-    gift3 = 20;
-  } else if (point == 24) {
-    gift1 = 9;
-    gift2 = 63;
-    gift3 = 30;
-  } else if (point == 9) {
-    gift3 = 22;
-  } else if (point == 10) {
-    gift3 = 38;
-  } else if (point == 17) {
-    gift3 = 54;
-  }
-  $(".monster").html(
-    `
-        <div class="rising">
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-mon1.jpg" alt="ボス素材">
-                    <h3>下位</h3>
-                </div>
-                <a>x` +
-      point +
-      `</a>
-            </div>
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-mon2.jpg" alt="特産品">
-                    <h3>中位</h3>
-                </div>
-                <a>x996</a>
-            </div>
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-mon3.jpg" alt="特産品">
-                    <h3>上位</h3>
-                </div>
-                <a>x996</a>
-            </div>
-        </div>
-    `
-  );
+  fetch("/json/gifted.json")
+    .then((response) => {
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Parse the JSON from the response
+    })
+    .then((data) => {
+      var low =
+        parseInt(data[normal].low) +
+        parseInt(data[skill].low) +
+        parseInt(data[ult].low);
+      var mid =
+        parseInt(data[normal].mid) +
+        parseInt(data[skill].mid) +
+        parseInt(data[ult].mid);
 
-  $(".gift").html(
-    `
-        <div class="rising">
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-gift1.png">
-                    <h3>下位</h3>
+      var high =
+        parseInt(data[normal].high) +
+        parseInt(data[skill].high) +
+        parseInt(data[ult].high);
+      $(".gift").html(
+        `
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-gift1.png">
+                            <h3>下位</h3>
+                        </div>
+                        <a>x` +
+          low +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-gift2.png">
+                            <h3>中位</h3>
+                        </div>
+                        <a>x` +
+          mid +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-gift3.png">
+                            <h3>上位</h3>
+                        </div>
+                        <a>x` +
+          high +
+          `</a>
+                    </div>
                 </div>
-                <a>x` +
-      point +
-      `</a>
-            </div>
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-gift2.png">
-                    <h3>中位</h3>
+            `
+      );
+    });
+  fetch("/json/monster.json")
+    .then((response) => {
+      var mlow =
+        parseInt(data[normal].low) +
+        parseInt(data[skill].low) +
+        parseInt(data[ult].low);
+      var mmid =
+        parseInt(data[normal].mid) +
+        parseInt(data[skill].mid) +
+        parseInt(data[ult].mid);
+
+      var mhigh =
+        parseInt(data[normal].high) +
+        parseInt(data[skill].high) +
+        parseInt(data[ult].high);
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Parse the JSON from the response
+    })
+    .then((data) => {
+      $(".monster").html(
+        `
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-mon1.jpg" alt="ボス素材">
+                            <h3>下位</h3>
+                        </div>
+                        <a>x` +
+          mlow +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-mon2.jpg" alt="特産品">
+                            <h3>中位</h3>
+                        </div>
+                        <a>x` +
+          mmid +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-mon3.jpg" alt="特産品">
+                            <h3>上位</h3>
+                        </div>
+                        <a>x` +
+          mhigh +
+          `</a>
+                    </div>
                 </div>
-                <a>x` +
-      point +
-      `</a>
-            </div>
-            <div class="item">
-                <div class="head">
-                    <img src="/img/G-gift3.png">
-                    <h3>上位</h3>
-                </div>
-                <a>x` +
-      point +
-      `</a>
-            </div>
-        </div>
-    `
-  );
+            `
+      );
+    });
 }
