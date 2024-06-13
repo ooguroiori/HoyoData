@@ -353,7 +353,7 @@ function updatePoint() {
                     <div class="item">
                         <div class="head">
                             <img src="/img/S-crown.jpg">
-                            <h3>週ボス</h3>
+                            <h3>足跡</h3>
                         </div>
                         <a>x` +
           scrown +
@@ -362,7 +362,7 @@ function updatePoint() {
                     <div class="item">
                         <div class="head">
                             <img src="/img/S-boss2.jpg">
-                            <h3>足跡</h3>
+                            <h3>週ボス</h3>
                         </div>
                         <a>x` +
           sboss +
