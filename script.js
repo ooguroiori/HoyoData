@@ -44,6 +44,9 @@ $(".dropdown").click(function () {
 $(".dropdown").focusout(function () {
   $(this).removeClass("active");
   $(this).find(".dropdown-menu").slideUp(300);
+  $(this).find(".dropdown-menu2").slideUp(300);
+  $(this).find(".dropdown-menu3").slideUp(300);
+  $(this).find(".dropdown-menu4").slideUp(300);
 });
 $(".dropdown .dropdown-menu li").click(function () {
   $(this).parents(".dropdown").find("span").text($(this).text());
