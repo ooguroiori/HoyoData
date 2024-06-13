@@ -57,7 +57,7 @@ h2::after {
   }
   
   /*Styling Selectbox*/
-  .dropdown {
+  .genshin .dropdown {
     width: 30%;
     display: inline-block;
     background-color: #fff;
@@ -206,11 +206,15 @@ h2::after {
         font-size: 10px;
     }
 
-    .dropdown {
+    h2::after {
+        width: 100%; /* 必要に応じて調整 */
+    }
+
+    .genshin .dropdown {
         width: 70px;
     }
 
-    .select span{
-        font-size: 10px;
+    .genshin .select span{
+        font-size: 9px;
     }
 }

@@ -1,0 +1,211 @@
+[
+  {
+    "level": 0,
+    "attack": [
+      {
+        "low": 0,
+        "mid": 0,
+        "high": 0
+      }
+    ],
+    "other": [
+      {
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 1,
+    "attack": [
+      {
+        "low": 0,
+        "mid": 0,
+        "high": 0
+      }
+    ],
+    "other": [
+      {
+        "low": 0,
+        "mid": 0,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 0,
+        "high": 0
+      }
+    ],
+    "other": [
+      {
+        "low": 3,
+        "mid": 0,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 3,
+        "high": 0
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 0,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 0
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 3,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 3
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 7,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 7
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 13,
+        "high": 0,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 7
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 13,
+        "high": 3,
+        "crown": 0,
+        "boss": 0
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 7
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 13,
+        "high": 7,
+        "crown": 0,
+        "boss": 1
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 7
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 13,
+        "high": 7,
+        "crown": 1,
+        "boss": 2
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "attack": [
+      {
+        "low": 6,
+        "mid": 7,
+        "high": 7
+      }
+    ],
+    "other": [
+      {
+        "low": 9,
+        "mid": 13,
+        "high": 7,
+        "crown": 2,
+        "boss": 3
+      }
+    ]
+  }
+]

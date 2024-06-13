@@ -39,6 +39,7 @@ $(".dropdown").click(function () {
   $(this).find(".dropdown-menu").slideToggle(300);
   $(this).find(".dropdown-menu2").slideToggle(300);
   $(this).find(".dropdown-menu3").slideToggle(300);
+  $(this).find(".dropdown-menu4").slideToggle(300);
 });
 $(".dropdown").focusout(function () {
   $(this).removeClass("active");
@@ -56,34 +57,36 @@ $(".dropdown .dropdown-menu3 li").click(function () {
   $(this).parents(".dropdown").find("span").text($(this).text());
   $(this).parents(".dropdown").find("input").attr("value", $(this).attr("id"));
 });
+$(".dropdown .dropdown-menu4 li").click(function () {
+  $(this).parents(".dropdown").find("span").text($(this).text());
+  $(this).parents(".dropdown").find("input").attr("value", $(this).attr("id"));
+});
 /*End Dropdown Menu*/
 
 var normal = 0;
 var skill = 0;
 var ult = 0;
-var point;
+var giftedpoint = 0;
 
 $(".dropdown-menu li").click(function () {
   normal = parseInt($(this).parents(".dropdown").find("input").val());
-  point = normal + skill + ult;
-  console.log(point);
   updatePoint();
 });
 $(".dropdown-menu2 li").click(function () {
   skill = parseInt($(this).parents(".dropdown").find("input").val());
-  point = normal + skill + ult;
-  console.log(point);
   updatePoint();
 });
 $(".dropdown-menu3 li").click(function () {
   ult = parseInt($(this).parents(".dropdown").find("input").val());
-  point = normal + skill + ult;
-  console.log(point);
+  updatePoint();
+});
+$(".dropdown-menu4 li").click(function () {
+  giftedpoint = parseInt($(this).parents(".dropdown").find("input").val());
   updatePoint();
 });
 
 function updatePoint() {
-  fetch("/json/gifted.json")
+  fetch("/json/G-gifted.json")
     .then((response) => {
       // Check if the request was successful
       if (!response.ok) {
@@ -139,7 +142,7 @@ function updatePoint() {
             `
       );
     });
-  fetch("/json/monster.json")
+  fetch("/json/G-monster.json")
     .then((response) => {
       // Check if the request was successful
       if (!response.ok) {
@@ -169,6 +172,11 @@ function updatePoint() {
     parseInt(monsterdata[normal].crown) +
     parseInt(monsterdata[skill].crown) +
     parseInt(monsterdata[ult].crown);
+
+    var boss =
+    parseInt(monsterdata[normal].boss) +
+    parseInt(monsterdata[skill].boss) +
+    parseInt(monsterdata[ult].boss);
       $(".monster").html(
         `<div class="rising">
             <div class="item">
@@ -194,6 +202,13 @@ function updatePoint() {
             </div>
             <div class="item">
               <div class="head">
+                  <img src="/img/G-boss2.png">
+                  <h3>週ボス</h3>
+              </div>
+              <a>x` + boss + `</a>
+            </div>
+            <div class="item">
+              <div class="head">
                   <img src="/img/G-crown.png">
                   <h3>知恵の冠</h3>
               </div>
@@ -202,4 +217,158 @@ function updatePoint() {
         </div>`
       );
     });
+
+    fetch("/json/S-gift.json")
+    .then((response) => {
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Parse the JSON from the response
+    })
+    .then((giftdata) => {
+      var slow =
+        6 +
+        parseInt(giftdata[normal].attack[0].low) +
+        parseInt(giftdata[skill].other[0].low) +
+        parseInt(giftdata[ult].other[0].low) +
+        parseInt(giftdata[giftedpoint].other[0].low);
+      var smid =
+        16 +
+        parseInt(giftdata[normal].attack[0].mid) +
+        parseInt(giftdata[skill].other[0].mid) +
+        parseInt(giftdata[ult].other[0].mid) +
+        parseInt(giftdata[giftedpoint].other[0].mid);
+
+      var shigh =
+        38 +
+        parseInt(giftdata[normal].attack[0].high) +
+        parseInt(giftdata[skill].other[0].high) +
+        parseInt(giftdata[ult].other[0].high) +
+        parseInt(giftdata[giftedpoint].other[0].high);
+      $(".desteny").html(
+        `
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-gift1.jpg">
+                            <h3>下位</h3>
+                        </div>
+                        <a>x` +
+          slow +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-gift2.jpg">
+                            <h3>中位</h3>
+                        </div>
+                        <a>x` +
+          smid +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-gift3.jpg">
+                            <h3>上位</h3>
+                        </div>
+                        <a>x` +
+          shigh +
+          `</a>
+                    </div>
+                </div>
+            `
+      );
+    });
+  fetch("/json/S-monster.json")
+    .then((response) => {
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Parse the JSON from the response
+    })
+    .then((smonster) => {
+      var smlow =
+        8 +
+        parseInt(smonster[normal].attack[0].low) +
+        parseInt(smonster[skill].other[0].low) +
+        parseInt(smonster[ult].other[0].low) +
+        parseInt(smonster[giftedpoint].other[0].low);
+      var smmid =
+        10 +
+        parseInt(smonster[normal].attack[0].mid) +
+        parseInt(smonster[skill].other[0].mid) +
+        parseInt(smonster[ult].other[0].mid) +
+        parseInt(smonster[giftedpoint].other[0].mid);
+
+      var smhigh =
+        30 +
+        parseInt(smonster[normal].attack[0].high) +
+        parseInt(smonster[skill].other[0].high) +
+        parseInt(smonster[ult].other[0].high) +
+        parseInt(smonster[giftedpoint].other[0].high);
+
+      var scrown =
+        2 +
+        parseInt(smonster[skill].other[0].crown) +
+        parseInt(smonster[ult].other[0].crown) +
+        parseInt(smonster[giftedpoint].other[0].crown);
+
+      var sboss =
+        3 +
+        parseInt(smonster[skill].other[0].boss) +
+        parseInt(smonster[ult].other[0].boss) +
+        parseInt(smonster[giftedpoint].other[0].boss);
+      $(".mon").html(
+        `
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-mon1.jpg">
+                            <h3>下位</h3>
+                        </div>
+                        <a>x` +
+          smlow +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-mon2.jpg">
+                            <h3>中位</h3>
+                        </div>
+                        <a>x` +
+          smmid +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-mon3.jpg">
+                            <h3>上位</h3>
+                        </div>
+                        <a>x` +
+          smhigh +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-crown.jpg">
+                            <h3>週ボス</h3>
+                        </div>
+                        <a>x` +
+          scrown +
+          `</a>
+                    </div>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-boss2.jpg">
+                            <h3>足跡</h3>
+                        </div>
+                        <a>x` +
+          sboss +
+          `</a>
+                    </div>
+                </div>
+            `
+    )});
 }

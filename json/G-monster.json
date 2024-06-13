@@ -4,76 +4,87 @@
     "low": 0,
     "mid": 0,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 1,
     "low": 0,
     "mid": 0,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 2,
     "low": 6,
     "mid": 0,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 3,
     "low": 6,
     "mid": 3,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 4,
     "low": 6,
     "mid": 7,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 5,
     "low": 6,
     "mid": 13,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 6,
     "low": 6,
     "mid": 22,
     "high": 0,
-    "crown": 0
+    "crown": 0,
+    "boss": 0
   },
   {
     "level": 7,
     "low": 6,
     "mid": 22,
     "high": 4,
-    "crown": 0
+    "crown": 0,
+    "boss": 1
   },
   {
     "level": 8,
     "low": 6,
     "mid": 22,
     "high": 10,
-    "crown": 0
+    "crown": 0,
+    "boss": 2
   },
   {
     "level": 9,
     "low": 6,
     "mid": 22,
     "high": 19,
-    "crown": 0
+    "crown": 0,
+    "boss": 4
   },
   {
     "level": 10,
     "low": 6,
     "mid": 22,
     "high": 31,
-    "crown": 1
+    "crown": 1,
+    "boss": 6
   }
 ]
