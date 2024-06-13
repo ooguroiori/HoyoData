@@ -25,10 +25,10 @@ body{
 }
 
 header{
-    padding-top: 20px;
     width:100%;
     display:flex;
     justify-content: center;
+    margin:40px 0;
 }
 
 header img{
@@ -37,6 +37,25 @@ header img{
     border-radius: 10px;
 }
 
+#button1:hover {
+    transform: scale(1.08);
+}
+
+#button2 {
+    transition: transform 0.2s;
+}
+
+#button2:hover {
+    transform: scale(1.08);
+}
+
+#button1 {
+    transition: transform 0.2s;
+}
+
+header img:hover {
+    transform: none;
+}
 .main{
     padding:5% 20%;
 }
