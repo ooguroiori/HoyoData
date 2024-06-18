@@ -17,120 +17,348 @@
     </header>
     <div class="main">
         <div class="genshin" id="genshinDiv">
-            <h1>・キャラクター</h1>
-            <h2>突破素材</h2>
-            <div class="rising">
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-boss.png" alt="ボス素材">
-                        <h3>ボス素材</h3>
+            <nav>
+                <a href="#" onclick="showContent('character')">キャラクター</a>
+                <a href="#" onclick="showContent('weapon')">武器</a>
+                <!-- <a href="#">Blog</a>
+                <a href="#">Portefolio</a>
+                <a href="#">Contact</a> -->
+                <div class="animation start-home"></div>
+            </nav>
+            <div id="character" class="content active">
+                <h2>突破素材</h2>
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-boss.png" alt="ボス素材">
+                            <h3>ボス素材</h3>
+                        </div>
+                        <a>x46</a>
                     </div>
-                    <a>x46</a>
-                </div>
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-tokusan.jpg" alt="特産品">
-                        <h3>特産品</h3>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-tokusan.jpg" alt="特産品">
+                            <h3>特産品</h3>
+                        </div>
+                        <a>x168</a>
                     </div>
-                    <a>x168</a>
                 </div>
-            </div>
-            <h2>経験値本</h2>
-            <div class="rising">
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-exp2.jpg" alt="ボス素材">
-                        <h3>大英雄</h3>
+                <h2>経験値本</h2>
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-exp2.jpg" alt="ボス素材">
+                            <h3>大英雄</h3>
+                        </div>
+                        <a>x249</a>
                     </div>
-                    <a>x249</a>
-                </div>
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-exp.jpg" alt="特産品">
-                        <h3>冒険家</h3>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-exp.jpg" alt="特産品">
+                            <h3>冒険家</h3>
+                        </div>
+                        <a>x996</a>
                     </div>
-                    <a>x996</a>
                 </div>
-            </div>
-            <h2>宝石素材</h2>
-            <div class="rising">
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-crystal1.png">
-                        <h3>砕屑</h3>
+                <h2>宝石素材</h2>
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-crystal1.png">
+                            <h3>砕屑</h3>
+                        </div>
+                        <a>x1</a>
                     </div>
-                    <a>x1</a>
-                </div>
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-crystal2.png">
-                        <h3>欠片</h3>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-crystal2.png">
+                            <h3>欠片</h3>
+                        </div>
+                        <a>x9</a>
                     </div>
-                    <a>x9</a>
-                </div>
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-crystal3.png">
-                        <h3>塊</h3>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-crystal3.png">
+                            <h3>塊</h3>
+                        </div>
+                        <a>x9</a>
                     </div>
-                    <a>x9</a>
-                </div>
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/G-crystal4.png">
-                        <h3>最勝</h3>
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/G-crystal4.png">
+                            <h3>最勝</h3>
+                        </div>
+                        <a>x6</a>
                     </div>
-                    <a>x6</a>
                 </div>
-            </div>
-            <h2>天賦レベル</h2>
-            <div class="dropdown">
-                <div class="select">
-                  <span>通常攻撃</span>
-                  <i class="fa fa-chevron-left"></i>
-                </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu">
-                <script>
-                    for (let i = 1; i <= 10; i++) {
-                        document.write('<li id="' + i + '">' + i + '</li>');
-                    }
-                </script>
-                </ul>
-            </div>
-            <span class="msg"></span>
-            <div class="dropdown">
-                <div class="select">
-                  <span>元素スキル</span>
-                  <i class="fa fa-chevron-left"></i>
-                </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu2">
+                <h2>天賦レベル</h2>
+                <div class="dropdown">
+                    <div class="select">
+                      <span>通常攻撃</span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu">
                     <script>
                         for (let i = 1; i <= 10; i++) {
                             document.write('<li id="' + i + '">' + i + '</li>');
                         }
                     </script>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <div class="select">
-                  <span>元素爆発</span>
-                  <i class="fa fa-chevron-left"></i>
+                    </ul>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu3">
-                    <script>
-                        for (let i = 1; i <= 10; i++) {
-                            document.write('<li id="' + i + '">' + i + '</li>');
-                        }
-                    </script>
-                </ul>
+                <span class="msg"></span>
+                <div class="dropdown">
+                    <div class="select">
+                      <span>元素スキル</span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu2">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <div class="select">
+                      <span>元素爆発</span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu3">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
+                </div>
+                <h2>天賦素材</h2>
+                <div class="gift"> </div>
+                <h2>モンスター素材</h2>
+                <div class="monster"> </div>
             </div>
-            <h2>天賦素材</h2>
-            <div class="gift"> </div>
-            <h2>モンスター素材</h2>
-            <div class="monster"> </div>
+
+            <div id="weapon" class="content">
+                <div class="radio-container">
+                    <label class="radio">
+                        <input type="radio" name="option" value="option1" checked>
+                        <span class="radio-mark"></span>
+                        ☆4
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="option" value="option2">
+                        <span class="radio-mark"></span>
+                        ☆5
+                    </label>
+                </div>
+                
+                <div id="content1" class="panel active">
+                    <h2>秘境素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon1.png">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x3</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon2.png">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x9</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon3.png">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x9</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon4.png">
+                                <h3>最上位</h3>
+                            </div>
+                            <a>x4</a>
+                        </div>
+                    </div>
+                    <h2>モンスター素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x10</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x18</a>
+                        </div>
+                    </div>
+                    <h2>精鋭素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x18</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x27</a>
+                        </div>
+                    </div>
+                    <h2>モラ</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mora.jpg">
+                                <h3>モラ</h3>
+                            </div>
+                            <a>x757,000</a>
+                        </div>
+                    </div>
+                    <h2>強化素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weexp3.jpg">
+                                <h3>魔鉱</h3>
+                            </div>
+                            <a>x607</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content2" class="panel">
+                    <h2>秘境素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon1.png">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x5</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon2.png">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x14</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon3.png">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x14</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weapon4.png">
+                                <h3>最上位</h3>
+                            </div>
+                            <a>x6</a>
+                        </div>
+                    </div>
+                    <h2>モンスター素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x23</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x27</a>
+                        </div>
+                    </div>
+                    <h2>精鋭素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x23</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x27</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-spmon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x41</a>
+                        </div>
+                    </div>
+                    <h2>モラ</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-mora.jpg">
+                                <h3>モラ</h3>
+                            </div>
+                            <a>x1,134,000</a>
+                        </div>
+                    </div>
+                    <h2>強化素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/G-weexp3.jpg">
+                                <h3>魔鉱</h3>
+                            </div>
+                            <a>x909</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="starrail hidden" id="starrailDiv">
