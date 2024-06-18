@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホヨバの犬ツール</title>
+    <title>ホヨバの犬</title>
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/genshin.css">
@@ -18,7 +18,7 @@
     <div class="main">
         <div class="genshin" id="genshinDiv">
             <nav>
-                <a href="#" onclick="showContent('character')">キャラクター</a>
+                <a href="#" onclick="showContent('character')">キャラ</a>
                 <a href="#" onclick="showContent('weapon')">武器</a>
                 <!-- <a href="#">Blog</a>
                 <a href="#">Portefolio</a>
@@ -94,8 +94,8 @@
                 <h2>天賦レベル</h2>
                 <div class="dropdown">
                     <div class="select">
-                      <span>通常攻撃</span>
-                      <i class="fa fa-chevron-left"></i>
+                        <span>通常攻撃</span>
+                        <i class="fa fa-chevron-left"></i>
                     </div>
                     <input type="hidden" name="gender">
                     <ul class="dropdown-menu">
@@ -109,8 +109,8 @@
                 <span class="msg"></span>
                 <div class="dropdown">
                     <div class="select">
-                      <span>元素スキル</span>
-                      <i class="fa fa-chevron-left"></i>
+                        <span>元素スキル</span>
+                        <i class="fa fa-chevron-left"></i>
                     </div>
                     <input type="hidden" name="gender">
                     <ul class="dropdown-menu2">
@@ -123,8 +123,8 @@
                 </div>
                 <div class="dropdown">
                     <div class="select">
-                      <span>元素爆発</span>
-                      <i class="fa fa-chevron-left"></i>
+                        <span>元素爆発</span>
+                        <i class="fa fa-chevron-left"></i>
                     </div>
                     <input type="hidden" name="gender">
                     <ul class="dropdown-menu3">
@@ -362,96 +362,250 @@
         </div>
 
         <div class="starrail hidden" id="starrailDiv">
-            <h1>・キャラクター</h1>
-            <h2>突破素材</h2>
-            <div class="rising">
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/S-boss.jpg" alt="ボス素材">
-                        <h3>ボス素材</h3>
+            <div class="S-nav">
+                <input id="toggle-on" class="toggle toggle-left" name="toggle" value="chara" type="radio" checked>
+                <label for="toggle-on" class="btn">キャラ</label>
+                <input id="toggle-off" class="toggle toggle-right" name="toggle" value="kohen" type="radio">
+                <label for="toggle-off" class="btn">光円錐</label>
+            </div>
+            <div id="chara-content" class="toggle-content active">
+                <h2>突破素材</h2>
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-boss.jpg" alt="ボス素材">
+                            <h3>ボス素材</h3>
+                        </div>
+                        <a>x65</a>
                     </div>
-                    <a>x65</a>
                 </div>
-            </div>
-            <h2>経験値本</h2>
-            <div class="rising">
-                <div class="item">
-                    <div class="head">
-                        <img src="/img/S-exp2.jpg" alt="ボス素材">
-                        <h3>漫遊指南</h3>
+                <h2>経験値本</h2>
+                <div class="rising">
+                    <div class="item">
+                        <div class="head">
+                            <img src="/img/S-exp2.jpg" alt="ボス素材">
+                            <h3>漫遊指南</h3>
+                        </div>
+                        <a>x290</a>
                     </div>
-                    <a>x290</a>
                 </div>
-                <!-- <div class="item">
-                    <div class="head">
-                        <img src="/img/S-exp.jpg" alt="特産品">
-                        <h3>冒険家</h3>
+                <h2>軌跡</h2>
+                <div class="dropdown">
+                    <div class="select">
+                        <span>通常攻撃</span>
+                        <i class="fa fa-chevron-left"></i>
                     </div>
-                    <a>x996</a>
-                </div> -->
-            </div>
-            <h2>軌跡</h2>
-            <div class="dropdown">
-                <div class="select">
-                  <span>通常攻撃</span>
-                  <i class="fa fa-chevron-left"></i>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu">
+                        <script>
+                            for (let i = 1; i <= 6; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu">
-                    <script>
-                        for (let i = 1; i <= 6; i++) {
-                            document.write('<li id="' + i + '">' + i + '</li>');
-                        }
-                    </script>
-                </ul>
-            </div>
-            <span class="msg"></span>
-            <div class="dropdown">
-                <div class="select">
-                  <span>戦闘スキル</span>
-                  <i class="fa fa-chevron-left"></i>
+                <span class="msg"></span>
+                <div class="dropdown">
+                    <div class="select">
+                        <span>戦闘スキル</span>
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu2">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu2">
-                    <script>
-                        for (let i = 1; i <= 10; i++) {
-                            document.write('<li id="' + i + '">' + i + '</li>');
-                        }
-                    </script>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <div class="select">
-                  <span>必殺技</span>
-                  <i class="fa fa-chevron-left"></i>
+                <div class="dropdown">
+                    <div class="select">
+                        <span>必殺技</span>
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu3">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu3">
-                    <script>
-                        for (let i = 1; i <= 10; i++) {
-                            document.write('<li id="' + i + '">' + i + '</li>');
-                        }
-                    </script>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <div class="select">
-                  <span>天賦</span>
-                  <i class="fa fa-chevron-left"></i>
+                <div class="dropdown">
+                    <div class="select">
+                        <span>天賦</span>
+                        <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="gender">
+                    <ul class="dropdown-menu4">
+                        <script>
+                            for (let i = 1; i <= 10; i++) {
+                                document.write('<li id="' + i + '">' + i + '</li>');
+                            }
+                        </script>
+                    </ul>
                 </div>
-                <input type="hidden" name="gender">
-                <ul class="dropdown-menu4">
-                    <script>
-                        for (let i = 1; i <= 10; i++) {
-                            document.write('<li id="' + i + '">' + i + '</li>');
-                        }
-                    </script>
-                </ul>
+                <h2>運命素材</h2>
+                <div class="desteny"> </div>
+                <h2>モンスター素材</h2>
+                <div class="mon"> </div>
             </div>
-            <h2>運命素材</h2>
-            <div class="desteny"> </div>
-            <h2>モンスター素材</h2>
-            <div class="mon"> </div>
+            <div id="cone-content" class="toggle-content">
+                <div class="radio-container2">
+                    <label class="radio2">
+                        <input type="radio" name="option2" value="option1" checked>
+                        <span class="radio-mark2"></span>
+                        ☆4
+                    </label>
+                    <label class="radio2">
+                        <input type="radio" name="option2" value="option2">
+                        <span class="radio-mark2"></span>
+                        ☆5
+                    </label>
+                </div>
+                <div id="S-content1" class="panel2 active">
+                    <h2>運命素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x3</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x9</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x12</a>
+                        </div>
+                    </div>
+                    <h2>モンスター素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x12</a>
+                        </div>
+                    </div>
+                    <h2>エーテル</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-weexp3.jpg">
+                                <h3>精製</h3>
+                            </div>
+                            <a>x133</a>
+                        </div>
+                    </div>
+                    <h2>信用ポイント</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-point.png">
+                                <h3>ポイント</h3>
+                            </div>
+                            <a>x707,250</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="S-content2" class="panel2">
+                    <h2>運命素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x4</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x12</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-gift3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x15</a>
+                        </div>
+                    </div>
+                    <h2>モンスター素材</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon1.jpg">
+                                <h3>下位</h3>
+                            </div>
+                            <a>x20</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon2.jpg">
+                                <h3>中位</h3>
+                            </div>
+                            <a>x20</a>
+                        </div>
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-mon3.jpg">
+                                <h3>上位</h3>
+                            </div>
+                            <a>x14</a>
+                        </div>
+                    </div>
+                    <h2>エーテル</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-weexp3.jpg">
+                                <h3>精製</h3>
+                            </div>
+                            <a>x166</a>
+                        </div>
+                    </div>
+                    <h2>信用ポイント</h2>
+                    <div class="rising">
+                        <div class="item">
+                            <div class="head">
+                                <img src="/img/S-point.png">
+                                <h3>ポイント</h3>
+                            </div>
+                            <a>x883,500</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
