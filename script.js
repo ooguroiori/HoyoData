@@ -32,6 +32,47 @@ button2.addEventListener("click", function () {
   }, 0);
 });
 
+// ナビゲーションのアニメーション
+// 押した方にアニメーションが移動する
+document.addEventListener('DOMContentLoaded', function() {
+  var animation = document.querySelector('.animation');
+  var navLinks = document.querySelectorAll('nav a');
+
+  navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+          var left = this.offsetLeft; // リンクの左端の位置を取得
+          var width = this.offsetWidth; // リンクの幅を取得
+
+          animation.style.left = left + 'px'; // .animationのleftを設定
+          animation.style.width = width + 'px'; // .animationのwidthを設定
+      });
+  });
+});
+
+//キャラと武器の切り替え
+function showContent(id) {
+  var contents = document.getElementsByClassName('content');
+  for (var i = 0; i < contents.length; i++) {
+      contents[i].classList.remove('active');
+  }
+  document.getElementById(id).classList.add('active');
+}
+
+//武器レアリティの切り替え
+$(document).ready(function() {
+  // 初期表示
+  $(".panel.active").show();
+
+  // ラジオボタンの変更時の処理
+  $("input[type='radio']").change(function() {
+    var selectedOption = $(this).val();
+    $(".panel").removeClass("active");
+    $("#content" + selectedOption.substr(-1)).addClass("active");
+    $(".panel").hide();
+    $(".panel.active").show();
+  });
+});
+
 /*Dropdown Menu*/
 $(".dropdown").click(function () {
   $(this).attr("tabindex", 1).focus();
