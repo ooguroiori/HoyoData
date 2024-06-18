@@ -64,13 +64,48 @@ $(document).ready(function() {
   $(".panel.active").show();
 
   // ラジオボタンの変更時の処理
-  $("input[type='radio']").change(function() {
+  $(".radio input[type='radio']").change(function() {
     var selectedOption = $(this).val();
     $(".panel").removeClass("active");
     $("#content" + selectedOption.substr(-1)).addClass("active");
     $(".panel").hide();
     $(".panel.active").show();
   });
+});
+
+//スタレのトグルコンテンツ切り替え
+const toggleOn = document.getElementById('toggle-on');
+const toggleOff = document.getElementById('toggle-off');
+const charaContent = document.getElementById('chara-content');
+const kohenContent = document.getElementById('cone-content');
+
+//武器レアリティの切り替え
+$(document).ready(function() {
+  // 初期表示
+  $(".panel2.active").show();
+
+  // ラジオボタンの変更時の処理
+  $(".radio2 input[type='radio']").change(function() {
+    var selectedOption = $(this).val();
+    $(".panel2").removeClass("active");
+    $("#S-content" + selectedOption.substr(-1)).addClass("active");
+    $(".panel2").hide();
+    $(".panel2.active").show();
+  });
+});
+
+toggleOn.addEventListener('change', function() {
+    if (toggleOn.checked) {
+        charaContent.classList.add('active');
+        kohenContent.classList.remove('active');
+    }
+});
+
+toggleOff.addEventListener('change', function() {
+    if (toggleOff.checked) {
+        charaContent.classList.remove('active');
+        kohenContent.classList.add('active');
+    }
 });
 
 /*Dropdown Menu*/
