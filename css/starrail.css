@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'starrail-font';
     src: url('/fonts/starrail.ttf') format('truetype');
+    font-display: swap;
   }
 
 .starrail {

@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'genshin-font';
     src: url('/fonts/genshin.ttf') format('truetype');
+    font-display: swap;
   }
 
 .genshin {
